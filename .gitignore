@@ -1,0 +1,6 @@
+*.pyc
+.idea
+DonersUS_CSV_Data/opendata_projects_clean.csv
+DonersUS_CSV_Data/
+opendata_projects_clean.csv
+requirements.txt
