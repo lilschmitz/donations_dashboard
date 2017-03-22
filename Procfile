@@ -1,1 +1,1 @@
-web: gunicorn DV_USA_Donations_KS:app
+web: gunicorn school_donations:app
