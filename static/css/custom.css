@@ -1,12 +1,53 @@
+
+li span {visibility: hidden;}
+ .dynatable-disabled-page{
+    text-decoration: none !important;
+    font-size: 16px;
+     font-weight: bold;
+    color:grey !important;
+}
+  .dynatable-page-link{
+    text-decoration: none !important;
+    font-size: 16px;
+     font-weight: bold;
+    color:grey !important;
+}
+  .dynatable-page-break{
+     text-decoration: none !important;
+    font-size: 16px;
+     font-weight: bold;
+    color:grey !important;
+  }
+  .dynatable-page-link dynatable-page-next{
+    text-decoration: none !important;
+    color:grey !important;
+}
+
+.dynatable-active-page{
+    background:lightgrey!important;
+}
+
+a.dynatable-sort-header{
+    color: inherit;
+text-decoration: none;}
+
 #number-projects-nd {
-   font-size: 60px;
+   font-size: 50px;
+    font-weight: bolder;
+    padding:10px;
+    height:100px;
 }
 
 #total-donations-nd {
-   font-size: 60px;
+   font-size: 50px;
+    font-weight:bolder;
+   padding:10px;
+    height:100px;
 }
 
-
+#background-info {
+    height:108px;
+}
 
 
 .dc-chart g.row text {
@@ -41,20 +82,20 @@
 }
 
 
-.dc-select-menu {
-   background: #33CC99;
-   width: 80%;
-   border: none;
-   position: relative;
-   height: 31px;
-   font-size: 15px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 4px;
-   padding-bottom: 0px;
+/*.dc-select-menu {*/
+   /*background: #33CC99;*/
+   /*width: 80%;*/
+   /*border: none;*/
+   /*position: relative;*/
+   /*height: 31px;*/
+   /*font-size: 15px;*/
+   /*color: white;*/
+   /*vertical-align: middle;*/
+   /*text-align: center;*/
+   /*padding-top: 4px;*/
+   /*padding-bottom: 0px;*/
 
-}
+/*}*/
 
 
 #wrapper {
@@ -140,7 +181,7 @@ a {
 
 #toTopRight{
         margin-right: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         height:100px;
         width: 100px;
         position: absolute;   /* Absolute Link */
