@@ -187,3 +187,8 @@ a {
         position: absolute;   /* Absolute Link */
         bottom:0;       /* Offset however we wish*/
         right:-50px;}
+
+
+.chart-stage {
+    padding-right: 10px;
+}
