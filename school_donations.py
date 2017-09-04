@@ -25,7 +25,7 @@ COLLECTION_NAME = os.getenv('MONGO_COLLECTION_NAME','projects')
 DBS_NAME = 'donorsUSA'
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
-          'date_posted': True, 'total_donations': True, '_id': False, 'primary_focus_area': True, 'donors_num':True}
+          'date_posted': True, 'total_donations': True, '_id': False, 'primary_focus_area': True}
 
 
 @app.route("/")
