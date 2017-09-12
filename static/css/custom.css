@@ -1,3 +1,23 @@
+.dc-data-count {
+    margin-top:0 !important;
+    padding-bottom: 10px !important;
+}
+
+h5 #theDate {
+    margin-top:0 !important;
+    padding-bottom: 10px !important;
+}
+
+h5 a #donors-choose.btn-default.btn-sm  {
+
+    padding-bottom: 20px !important;
+}
+
+h5 a #github-code.btn-default.btn-sm {
+    padding-bottom: 20px !important;
+
+}
+
 
 li span {visibility: hidden;}
  .dynatable-disabled-page{
@@ -31,164 +51,33 @@ a.dynatable-sort-header{
     color: inherit;
 text-decoration: none;}
 
-#number-projects-nd {
+div#number-projects-nd.dc-chart {
    font-size: 50px;
-    font-weight: bolder;
-    padding:10px;
-    height:100px;
+    padding: 20px 20px 10px 10px;
+    height:140px;
+
 }
 
-#total-donations-nd {
+div#total-donations-nd.dc-chart {
    font-size: 50px;
-    font-weight:bolder;
-   padding:10px;
-    height:100px;
+   padding: 20px 20px 10px 10px;
+    height:140px;
+
 }
 
-#background-info {
-    height:108px;
+div#background-info.chart-stage {
+    height:150px !important;
+
 }
 
+div#selection-option.chart-stage{
+    height:150px !important;
+}
 
 .dc-chart g.row text {
    fill: black;
    font-size: 12px;
 }
 
-#total-projects {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
-
-#net-donations {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
 
 
-/*.dc-select-menu {*/
-   /*background: #33CC99;*/
-   /*width: 80%;*/
-   /*border: none;*/
-   /*position: relative;*/
-   /*height: 31px;*/
-   /*font-size: 15px;*/
-   /*color: white;*/
-   /*vertical-align: middle;*/
-   /*text-align: center;*/
-   /*padding-top: 4px;*/
-   /*padding-bottom: 0px;*/
-
-/*}*/
-
-
-#wrapper {
-    margin-bottom: 0px;
-    padding-top:0px;
-  padding-right: 0px;
-  transition: all 0.4s ease 0s;
-     margin:0px;
-    outline:none;
-   vertical-align: top;
-    font-size:0px;
-}
-
-#sidebar-wrapper {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 20px;
-  right: 0px;
-  width: 100px;
-
-  background: #CCC;
-    padding-left: 10px;
-  position: fixed;
-  height: 100%;
-  /*overflow-y: auto;*/
-  /*z-index: 1000;*/
-  transition: all 0.4s ease 0s;
-     margin:0px;
-
-}
-
-#page-content-wrapper {
-  width: 100%;
-}
-
-.sidebar-nav {
-  position: absolute;
-  width: 250px;
-  list-style: none;
-    text-decoration: none;
-  margin: 0;
-  padding: 0;
-
-}
-
-
-#RST2 {
-    margin-right: 50px;
-        margin-bottom: 50px;
-        position: absolute;
-    top:5px;
-    right:-45px;}
-
-a {
-    text-decoration: none;
-    font-size:18px;
-    color: white;
-  }
-
-@media (max-width:767px) {
-
-    #wrapper {
-      padding-right: 0;
-    }
-
-    #sidebar-wrapper {
-      right: 0;
-    }
-
-    #wrapper.active {
-      position: relative;
-      right: 250px;
-    }
-
-    #wrapper.active #sidebar-wrapper {
-      right: 250px;
-      width: 250px;
-      transition: all 0.4s ease 0s;
-    }
-
-}
-
-
-#toTopRight{
-        margin-right: 50px;
-        margin-bottom: 40px;
-        height:100px;
-        width: 100px;
-        position: absolute;   /* Absolute Link */
-        bottom:0;       /* Offset however we wish*/
-        right:-50px;}
-
-
-.chart-stage {
-    padding-right: 10px;
-}

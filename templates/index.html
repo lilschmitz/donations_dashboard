@@ -1,110 +1,148 @@
 <!DOCTYPE html>
-<html><!--text-->
+<html>
 <head>
     <title>School Donations Dashboard</title>
     <link rel="stylesheet" href="{{ url_for ('static',
          filename='lib/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',
          filename='lib/css/keen-dashboards.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/font-awesome/css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename='css/jquery.dynatable.css') }}">
 </head>
 <body class="application">
-
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./">School Donations Dashboard <i><small> by Kathrin Schmitz</small></i></a>
-            <button class="intro_button" type="button" style="margin: 10px !important;" autofocus
-                    onclick="javascript:introJs().start();">Start Tour!
+            <a class="navbar-brand" href="./">School Donations Dashboard</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
         </div>
-        <div class="dc-data-count pull-right" style="color: white;"><span class="filter-count"></span> selected
-            out of <span class="total-count"></span> records | <a class="btn-default"
-                                                                  style="background-color:transparent; color:white;"
-                                                                  href="javascript:dc.filterAll();dc.renderAll();">Reset
-                All</a>
+
+        <!-- Navbar -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <button class="intro_button" type="button" style="margin: 10px !important;"
+                            onclick="javascript:introJs().start();">Start Tour!
+                    </button>
+                </li>
+                <li class="hidden"></li>
+                <li>
+                    <button class="btn btn-default" style="background-color:transparent; color:white; margin-top:10px;">
+                        <a
+                                href="javascript:dc.filterAll();dc.renderAll();" style="color:white;">Reset
+                            All</a></button>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 </div>
-
+<!--Structure of Dashboard starts out-->
 <div id="outer" class="container-fluid">
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 col-xs-12">
 
-            <!--Metric Placeholder-->
+            <!--Information on background of data-->
             <div class="col-sm-3">
                 <div class="chart-wrapper">
                     <div class="chart-title">
-                        <strong>Background Information</strong>
+                        <strong>Information</strong>
                     </div>
-                    <div class="chart-stage">
-                        <div id="#background-info" data-step="1"
-                             data-intro="This is the background info box to this dashboard with links to data source and the source code."
-                             style="font-weight: normal" data-position="right"><h5><strong>Today's Date:</strong> <input
-                                id="theDate" style="border:none"></h5>
-                            <h5><strong>Data Source:</strong> <a href="https://data.donorschoose.org/docs/overview/"
-                                                                 class="btn-default btn-sm"
-                                                                 style="color:dimgrey; background-color: lightgrey !important;">Donors
-                                Choose Org</a></h5>
-                        </div>
+                    <div class="chart-stage" id="background-info" data-step="1"
+                         data-intro="This is the background info box to this dashboard with links to data source and the source code."
+                         style="font-weight: normal" data-position="right"><h5><strong>Today's Date: </strong><input
+                            id="theDate" style="border:none"></h5>
+                        <h5><strong>Data Source: </strong><a href="https://data.donorschoose.org/docs/overview/"
+                                                             class="btn-default btn-sm" id="donors-choose"
+                                                             style="color:dimgrey; background-color: lightgrey !important;">Donors
+                            Choose</a></h5>
+                        <h5><strong>Github Code: </strong><a href="https://github.com/lilschmitz/donations_dashboard"
+                                                             class="btn-default btn-sm" id="github-code"
+                                                             style="color:dimgrey; background-color: lightgrey !important;">Dashboard
+                            Code</a></h5>
+                        <ul class="list-inline social-buttons">
+                            <li><h5><strong>Creator's Social Media: </strong></h5></li>
+                            <li><a href="https://twitter.com/LilSchmitz"><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/kathrin-schmitz-b349095"><i
+                                    class="fa fa-linkedin fa-2x"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <!--Metric Placeholder-->
+            <!--Selection Options in form of drop downs and an overall view of the data count-->
             <div class="col-sm-5">
                 <div class="chart-wrapper">
                     <div class="chart-title">
-                        <strong>Selection Options</strong>
+                        <strong>Data Selection</strong>
                     </div>
-                    <div class="chart-stage" id="selection-option"  data-step="2"
-                             data-intro="This box offers selection option to manipulate the dashboards data."
-                             style="font-weight: normal" data-position="left">
+                    <div class="chart-stage" id="selection-option" data-step="2"
+                         data-intro="This box offers selection option to manipulate the dashboards data."
+                         style="font-weight: normal" data-position="left">
+                        <h5>
+                            <div class="dc-data-count" class="col-sm-12 col-xs-12"><strong>Record Count: </strong><span
+                                    class="filter-count"></span> selected
+                                out of <span class="total-count"></span> records
+                            </div>
+                        </h5>
                         <table>
                             <tr>
-                                <th><h5><strong>Resource Type: </strong></h5></th><td>
+                                <th><h5><strong>Resource Type: </strong></h5></th>
+                                <td>
                                     <div id="field-resource" style="padding-left:5px !important;"></div>
                                 </td>
-                                <th><h5 style="padding-left:5px !important;"><strong>Area Type:</strong></h5></th><td>
+                                <th><h5 style="padding-left:5px !important;"><strong>Area Type:</strong></h5></th>
+                                <td>
                                     <div id="field-area" style="padding-right: 5px !important;"></div>
                                 </td>
                             </tr>
                             <tr>
-                                <th><h5><strong>Funding Type: </strong></h5></th> <td>
+                                <th><h5><strong>Funding Type: </strong></h5></th>
+                                <td>
                                     <div id="field-funding" style="padding-left:5px !important;"></div>
                                 </td>
-                                <th><h5 style="padding-left:5px !important;"><strong> Poverty Level: </strong></h5></th><td>
-                                    <div id="field-poverty"style="padding-left:5px !important;"></div>
+                                <th><h5 style="padding-left:5px !important;"><strong> Poverty Level: </strong></h5></th>
+                                <td>
+                                    <div id="field-poverty" style="padding-left:5px !important;"></div>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </div>
-            <!-- Metric 1 -->
+            <!-- Metric for Number of Donations -->
             <div class="col-sm-2">
                 <div class="chart-wrapper">
                     <div class="chart-title">
-                        <strong>Total Nbr of Donations</strong>
+                        <strong>Number of Donations</strong>
                     </div>
-                    <div class="chart-stage">
+                    <div class="chart-stage" class="col-sm-2 col-xs-2">
                         <div id="number-projects-nd" data-step="3"
                              data-intro="This section is a collection of key performance indicators. A one stop quick view if you will."
                              style="font-weight: normal" data-position="left"></div>
                     </div>
                 </div>
             </div>
-            <!-- Metric 2 -->
+            <!-- Metric for Dollar Amount of Donations made -->
 
             <div class="col-sm-2">
                 <div class="chart-wrapper">
                     <div class="chart-title">
-                        <strong>Total Donations in USD</strong>
+                        <strong>Total Donations USD</strong>
                     </div>
-                    <div class="chart-stage">
+                    <div class="chart-stage" class="col-sm-2 col-xs-2">
                         <div id="total-donations-nd" data-step="4"
                              data-intro="This section is a collection of key performance indicators. A one stop quick view if you will."
                              style="font-weight: normal" data-position="left"></div>
@@ -112,138 +150,142 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <!--Charts-->
-        <div class="col-sm-12">
-            <!-- Time Chart -->
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            <strong>Number of Donations</strong>
-                            <div id="menu-select" class="pull-right"></div>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="time-chart" data-step="5"
-                                 data-intro="This chart shows the number of donations made over the years. The user can select a range of years or use the drop down menu for number of donations made across the various states."
-                                 style="font-weight: normal" data-position="right"></div>
-                        </div>
-                    </div>
-                    <!-- USA Map -->
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                                <strong>Donation State Map</strong><a class="btn-default btn-xs pull-right center-block"
-                                                                      style="color:dimgrey; background-color: lightgrey !important;"
-                                                                      href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
-                            </div>
-                            <div class="chart-stage">
-                                <div id="us-chart" id="time-chart" data-step="6"
-                                         data-intro="This is an interactive map, which displays the level of donations as per depth of blue across the various states. The deeper the blue, the higher the donations count was. If the user is hovering over the states the actual donation sum is displayed."
-                                         style="font-weight: normal" data-position="right">
+        <div class="row">
+            <!--Charts-->
+            <div class="col-sm-12 col-xs-12">
+                <!-- Time Chart that shows years against number of donations and offers a range selection option dynamically and a drop down to select states-->
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="col-sm-8 col-xs-12">
+                            <div class="chart-wrapper">
+                                <div class="chart-title">
+                                    <strong>Number of Donations</strong>
+                                    <div id="menu-select" class="pull-right"></div>
                                 </div>
+                                <div class="chart-stage">
+                                    <div id="time-chart" class="col-xs-10" data-step="5"
+                                         data-intro="This chart shows the number of donations made over the years. The user can select a range of years or use the drop down menu for number of donations made across the various states."
+                                         style="font-weight: normal" data-position="right"></div>
+                                </div>
+                            </div>
+                            <!-- USA Map showing the donations made by school state -->
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="chart-wrapper">
+                                    <div class="chart-title">
+                                        <strong>Donation State Map</strong><a
+                                            class="btn-default btn-xs pull-right center-block"
+                                            style="color:dimgrey; background-color: lightgrey !important;"
+                                            href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                                    </div>
+                                    <div class="chart-stage">
+                                        <div id="us-chart" id="time-chart" data-step="6"
+                                             data-intro="This is an interactive map, which displays the level of donations as per depth of blue across the various states. The deeper the blue, the higher the donations count was. If the user is hovering over the states the actual donation sum is displayed."
+                                             style="font-weight: normal" data-position="right">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Bar chart that lists out the states and donations made --->
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="chart-wrapper">
+                                <div class="chart-title">
+                                    <strong>Origin States of Donations</strong><a class="btn-default btn-xs pull-right"
+                                                                                  style="color:dimgrey; background-color: lightgrey !important;"
+                                                                                  href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                                </div>
+                                <div class="chart-stage">
+                                    <div id="state-row-chart" data-step="7"
+                                         data-intro="This bar chart lists the various states and the amounts donated across the states."
+                                         style="font-weight: normal" data-position="left"></div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+            </div>
+        </div>
+
+        <!-- Row of various Charts-->
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- Funding Status Pie Chart -->
+                <div class="col-sm-3 ">
                     <div class="chart-wrapper">
                         <div class="chart-title">
-                            <strong>Origin States of Donations</strong><a class="btn-default btn-xs pull-right"
-                                                                          style="color:dimgrey; background-color: lightgrey !important;"
-                                                                          href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                            <strong>Funding Status</strong><a class="btn-default btn-xs pull-right center-block"
+                                                              style="color:dimgrey; background-color: lightgrey !important;"
+                                                              href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                         </div>
                         <div class="chart-stage">
-                            <div id="state-row-chart" data-step="7"
-                                 data-intro="This bar chart lists the various states and the amounts donated across the states."
+                            <div id="funding-chart" style="text-decoration-color: black;" data-step="8"
+                                 data-intro="This pie chart shows the status of the donations. Which are either 'completed', 'expired' or 'reallocated'."
+                                 style="font-weight: normal" data-position="right"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poverty Level Chart-->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <strong>Poverty Level</strong><a class="btn-default btn-xs pull-right center-block"
+                                                             style="color:dimgrey; background-color: lightgrey !important;"
+                                                             href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="poverty-level-row-chart" data-step="9"
+                                 data-intro="This row chart shows the poverty level categories in comparison."
+                                 style="font-weight: normal" data-position="right"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Area of Donations used for -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <strong>Area View</strong><a class="btn-default btn-xs pull-right center-block"
+                                                         style="color:dimgrey; background-color: lightgrey !important;"
+                                                         href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="area-row-chart" data-step="10"
+                                 data-intro="This row chart shows the areas that have received funding."
+                                 style="font-weight: normal" data-position="right"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resources Donations used for-->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <strong>Resources Type</strong><a class="btn-default btn-xs pull-right center-block"
+                                                              style="color:dimgrey; background-color: lightgrey !important;"
+                                                              href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="resource-type-row-chart" data-step="11"
+                                 data-intro="This row chart shows the resources that were invested in."
                                  style="font-weight: normal" data-position="left"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Row of various Charts-->
-    <div class="row">
-        <div class="col-sm-12">
-            <!-- funding Pie -->
-            <div class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <strong>Funding Status</strong><a class="btn-default btn-xs pull-right center-block"
-                                                          style="color:dimgrey; background-color: lightgrey !important;"
-                                                          href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="funding-chart" style="text-decoration-color: black;" data-step="8"
-                             data-intro="This pie chart shows the status of the donations. Which are either 'completed', 'expired' or 'reallocated'."
-                             style="font-weight: normal" data-position="right"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Poverty -->
-            <div class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <strong>Poverty Level</strong><a class="btn-default btn-xs pull-right center-block"
-                                                         style="color:dimgrey; background-color: lightgrey !important;"
-                                                         href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="poverty-level-row-chart" data-step="9"
-                             data-intro="This row chart shows the poverty level categories in comparison."
-                             style="font-weight: normal" data-position="right"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Poverty -->
-            <div class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <strong>Area View</strong><a class="btn-default btn-xs pull-right center-block"
-                                                     style="color:dimgrey; background-color: lightgrey !important;"
-                                                     href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="area-row-chart" data-step="10"
-                             data-intro="This row chart shows the areas that have received funding."
-                             style="font-weight: normal" data-position="right"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Resources -->
-            <div class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <strong>Resources Type</strong><a class="btn-default btn-xs pull-right center-block"
-                                                          style="color:dimgrey; background-color: lightgrey !important;"
-                                                          href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="resource-type-row-chart" data-step="11"
-                             data-intro="This row chart shows the resources that were invested in."
-                             style="font-weight: normal" data-position="left"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Data view in details-->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <div class="col-sm-12">
-                            <h4>Donations Data Table View</h4>
-                            <hr>
-                        </div>
-                        <div class="chart-stage">
-                            <div class="col-sm-12">
+            <!--Data view of all records being pulled in 55000 - in details - using dynatable plug in-->
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <div class="col-sm-12 col-xs-12">
+                                <h4>Donations Data Table View</h4>
+                                <hr>
+                            </div>
+                            <div class="chart-stage">
+                                <div class="col-sm-12">
                                     <table id="dc-data-table" class="table table-hover" data-step="12"
-                                     data-intro="This data table shows all currently pulled in records. The Columns are filterable 'ascending' and 'descending', there is a paging function at the bottom right and a free text search window. On the bottom left hand the selected record count is displayed."
-                                     style="font-weight: normal" data-position="center-block">
+                                           data-intro="This data table shows all currently pulled in records. The Columns are filterable 'ascending' and 'descending', there is a paging function at the bottom right and a free text search window. On the bottom left hand the selected record count is displayed."
+                                           style="font-weight: normal" data-position="center-block">
                                         <div>&nbsp</div>
                                         <thead>
                                         <th data-dynatable-column="date_posted">Date
@@ -261,20 +303,26 @@
                     </div>
                 </div>
             </div>
-    </div>
-
-            <script src="{{ url_for ('static', filename='lib/js/jquery.min.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/jquery.dynatable.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/FileSaver.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/crossfilter.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/d3.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/dc.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/queue.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/intro.js') }}"></script>
-            <script src="{{ url_for ('static', filename='lib/js/keen.min.js') }}"></script>
-            <script src="{{ url_for ('static', filename='js/graph.js') }}"></script>
-            <script src="{{ url_for ('static', filename='js/accordion.js') }}"></script>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="text-muted text-center">
+                    <p>Kathrin Schmitz || Project 2 || 2017</p>
+                </div>
+            </footer>
+        </div>
+        <script src="https://use.fontawesome.com/0133a0d0da.js"></script>
+        <script src="{{ url_for ('static', filename='lib/js/jquery.min.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/jquery.dynatable.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/FileSaver.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/crossfilter.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/d3.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/dc.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/queue.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/intro.js') }}"></script>
+        <script src="{{ url_for ('static', filename='lib/js/keen.min.js') }}"></script>
+        <script src="{{ url_for ('static', filename='js/graph.js') }}"></script>
+        <script src="{{ url_for ('static', filename='js/accordion.js') }}"></script>
 
 </body>
 </html>

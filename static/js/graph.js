@@ -30,9 +30,6 @@ function makeGraphs(error, projectsJson, statesJson) {
         d["date_posted"] = dateFormat.parse(d["date_posted"]);
         d["date_posted"].setDate(1);
         d["total_donations"] = +d["total_donations"];
-        // d.year = d["date_posted"].getFullYear();
-        // d.month = d["date_posted"].getMonth() + 1;
-        // d.date = d["date_posted"].getDate(d);
     });
 
 
@@ -168,9 +165,9 @@ function makeGraphs(error, projectsJson, statesJson) {
 
     timeChart
         .ordinalColors(["#C96A23"])
-        .width(800)
+        .width(700)
         .height(300)
-        .margins({top: 30, right: 20, bottom: 30, left: 80})
+        .margins({top: 30, right: 30, bottom: 30, left: 60})
         .dimension(dateDim)
         .group(numProjectsByDate)
         .renderArea(true)
@@ -226,8 +223,8 @@ function makeGraphs(error, projectsJson, statesJson) {
         .xAxis().ticks(9);
 
     usaChart
-        .width(860)
-        .height(390)
+        .width(1000)
+        .height(330)
         .dimension(stateDim)
         .group(totalDonationsByState)
         .colors(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"])
@@ -236,8 +233,8 @@ function makeGraphs(error, projectsJson, statesJson) {
             return d.properties.name;
         })
         .projection(d3.geo.albersUsa()
-            .scale(810)
-            .translate([410, 180]))
+            .scale(660)
+            .translate([290, 180]))
         .on('renderlet', function (chart) {
             chart.selectAll('rect').on("click", function (d) {
                 //console.log("click!", d)
@@ -245,6 +242,7 @@ function makeGraphs(error, projectsJson, statesJson) {
                     .redrawGroup();
             })
         });
+
 // Using Dynatable to display data table with dynamic features in html
 var dynatable = $('#dc-data-table').dynatable({
                 features: {
@@ -272,7 +270,7 @@ var dynatable = $('#dc-data-table').dynatable({
 function RefreshTable() {
                 dc.events.trigger(function () {
                     dynatable.settings.dataset.originalRecords = dateDim.top(Infinity);
-                    dynatable.process();
+                    dynatable.process()
                 });
             };
 
