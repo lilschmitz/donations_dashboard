@@ -148,7 +148,8 @@ The data table is powered by the DynaTable plug in which is essentially a jquery
 ### [DC.js](https://dc-js.github.io/dc.js/) 
 As per DC.js org "a javascript charting library with native crossfilter support, allowing highly efficient exploration on large multi-dimensional datasets"
 
-### [D3.js](https://d3js.org/) D3 or Data-Driven Documents is a JavaScript library for producing Dynamic, interactive data visualizations in web browsers.
+### [D3.js](https://d3js.org/) 
+D3 or Data-Driven Documents is a JavaScript library for producing Dynamic, interactive data visualizations in web browsers.
 
 ### [Keen.js](https://github.com/keen) 
 Keen IO has a subset of functionality/code as per its library that supports dynamic dashboards. 
@@ -209,4 +210,3 @@ Kathrin Schmitz based on the provided material by the Code Institute Dublin Irel
 
 This project is licensed under the MIT License.
 
-# References
