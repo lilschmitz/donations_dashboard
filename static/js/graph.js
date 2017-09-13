@@ -216,7 +216,7 @@ function makeGraphs(error, projectsJson, statesJson) {
 
     stateChart
         .width(400)
-        .height(745)
+        .height(690)
         .colorDomain([0, max_state])
         .dimension(stateDim)
         .group(stateGroup)
