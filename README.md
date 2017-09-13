@@ -112,12 +112,16 @@ holds:
  ## - templates
        - index.html => core HTML one pager that outlines the elements of the dashboard which is complemented by the plug ins in css/js for keen dashboards, jquery dynatable js and css, bootstrap and ultimately the d3 dc for the graph visualizations based on jquery and crossfilter backend code.
 
-## - school_donations.py => python code that sets up the app route, connection, data call, field import 
+## - school_donations.py
+ => python code that sets up the app route, connection, data call, field import 
 
-## - fix_usa_ids.py => fixer python script to correct error in geojson for us-states
+## - fix_usa_ids.py 
+=> fixer python script to correct error in geojson for us-states
 
-## - requirements.txt => outline of all technology used as pre-req for deployment
-## - README.md => explanation of the project, its structure, its technology, how to deploy it etc
+## - requirements.txt 
+=> outline of all technology used as pre-req for deployment
+## - README.md 
+=> explanation of the project, its structure, its technology, how to deploy it etc
  
 
 
