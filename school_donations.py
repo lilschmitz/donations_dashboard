@@ -21,9 +21,9 @@ MONGODB_URI = os.getenv('MONGODB_URI')
 DBS_NAME = os.getenv('MONGO_DB_NAME','donorsUSA')
 COLLECTION_NAME = os.getenv('MONGO_COLLECTION_NAME','projects')
 
-# will need to revert to commented out os style if not local DBS_Name and Collection_Name
-DBS_NAME = 'donorsUSA'
-COLLECTION_NAME = 'projects'
+# will need to revert to commented out os style if not local DBS_Name and Collection_Name and if hosted comment out DBS Name and Collection Name
+# DBS_NAME = 'donorsUSA'
+# COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
           'date_posted': True, 'total_donations': True, '_id': False, 'primary_focus_area': True}
 

@@ -212,5 +212,12 @@ Kathrin Schmitz based on the provided material by the Code Institute Dublin Irel
 
 # License 
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License
 
+# References
+
+[Mike Bostock on Bl.ocks](https://bl.ocks.org/mbostock)
+
+[Techslides 1000 Examples for D3/DC](http://techslides.com/over-1000-d3-js-examples-and-demos)
+
+[Christophe Viau's List](http://christopheviau.com/d3list/)
