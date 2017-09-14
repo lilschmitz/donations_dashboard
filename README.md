@@ -26,11 +26,14 @@ Screenshot availabe here:
 
 The first row consist of four elements - the 'Information', 'Data Selection' and to metric boxes 'Number of Donations' and 'Total Donations USD'. 
 
-### 'Information' - shows the current date, a link to the DonorsOrg Website from which the data subset was taken, a link to this dashboards overall code in github and finally the social media links from the dashboards author.
+### 'Information'
+shows the current date, a link to the DonorsOrg Website from which the data subset was taken, a link to this dashboards overall code in github and finally the social media links from the dashboards author.
 
-### 'Data Selection' - shows a live record count which is automatically adjusted if filters are used or interactive functionality of charts are clicked. Below the record count are four drop down selection filters based on four data points and aggregated at donation count against this datapoint and its attributes. 
+### 'Data Selection' 
+shows a live record count which is automatically adjusted if filters are used or interactive functionality of charts are clicked. Below the record count are four drop down selection filters based on four data points and aggregated at donation count against this datapoint and its attributes. 
 
-### 'Number of Donations' is an overall count of lines donations made. Probably not absolutely useful/meaningful but this dashboard has to be regarded as a demonstration of code functionality and author's ability to integrate the code.
+### 'Number of Donations' 
+is an overall count of lines donations made. Probably not absolutely useful/meaningful but this dashboard has to be regarded as a demonstration of code functionality and author's ability to integrate the code.
 
 ### 'Total Donations USD' this is the aggregated amount in US dollars of donations made in millions.
 
@@ -49,6 +52,7 @@ The third chart, below the first chart - 'Donation State Map' is a geojson map t
 
 ## Second Row
 
+Screenshot availabe here: 
 [Second Row](https://www.dropbox.com/s/31vwenfodv0bzf2/Screenshot%202017-09-12%2013.50.04.png?dl=0)
 
 This row consists of 4 different charts - pie chart 'Funding Status', row chart 'Poverty Level', row chart 'Area View' and lastly a row chart 'Resources Type'. These datapoints had been reflected in the selection drop downs previously. Again all four of them are interactive and they all have a 'reset' button on the top right corner in order to reset any selection made. 
@@ -60,6 +64,7 @@ Screenshot availabe here:
 
 This data table is based on the Dynatable plug in and this will be explained in more details in the technology stack section. It comes with features that can be enabled. In this instance the top shows a drop down that allows to select records in 2x increments -ish (50, 100, 200, 500, 1000, 2000, 5000, 10000) and on the right side it has a dynamic search window. Please beware that only string data can be searched for. In future releases of this dashboard numbers should be dynamically searchable as well. Each columns's title is enabled to be filtered ascending and descending when clicked.
 
+Screenshot availabe here: 
 [Data Table - bottom](https://www.dropbox.com/s/u5wfhkzrjszo579/Screenshot%202017-09-12%2013.50.24.png?dl=0)
 
 At the bottom the Dynatable features are the record count display and on the far right the paging option. 
@@ -222,6 +227,7 @@ This project is licensed under the MIT License
 
 [Christophe Viau's List](http://christopheviau.com/d3list/)
 
-#Further Development 
+# Further Development 
 
 Smoothing out sizing transitions in regards to layout for drop down and first row. Set up a csv export for the datatable. Adding more dynamic number displays, maybe create a detailed view with more pages. Potentially incorporate social media stream data in relation to the school donations etc. A CRUD functionality and user administration/authorization functionality to manage different data level views. 
+
