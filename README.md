@@ -35,7 +35,8 @@ shows a live record count which is automatically adjusted if filters are used or
 ### 'Number of Donations' 
 is an overall count of lines donations made. Probably not absolutely useful/meaningful but this dashboard has to be regarded as a demonstration of code functionality and author's ability to integrate the code.
 
-### 'Total Donations USD' this is the aggregated amount in US dollars of donations made in millions.
+### 'Total Donations USD' 
+this is the aggregated amount in US dollars of donations made in millions.
 
 
 ## Middle Section 
