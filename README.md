@@ -221,3 +221,7 @@ This project is licensed under the MIT License
 [Techslides 1000 Examples for D3/DC](http://techslides.com/over-1000-d3-js-examples-and-demos)
 
 [Christophe Viau's List](http://christopheviau.com/d3list/)
+
+#Further Development 
+
+Smoothing out sizing transitions in regards to layout for drop down and first row. Set up a csv export for the datatable. Adding more dynamic number displays, maybe create a detailed view with more pages. Potentially incorporate social media stream data in relation to the school donations etc. A CRUD functionality and user administration/authorization functionality to manage different data level views. 
