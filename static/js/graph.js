@@ -27,11 +27,11 @@ function makeGraphs(error, projectsJson, statesJson) {
     var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
     var yearFormat = d3.time.format("%Y");
     var monthFormat = d3.time.format("%m");
-    donorsUSProjects.forEach(function (d) {
-        d["date_posted"] = dateFormat.parse(d["date_posted"]);
-        d["date_posted"].setDate(1);
-        d["total_donations"] = +d["total_donations"];
-    });
+       donorsUSProjects.forEach(function (d) {
+           d["date_posted"] = dateFormat.parse(d["date_posted"]);
+           d["date_posted"].setDate(1);
+           d["total_donations"] = +d["total_donations"];
+       });
 
 
 
